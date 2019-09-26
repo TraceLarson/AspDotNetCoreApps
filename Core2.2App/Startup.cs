@@ -35,6 +35,8 @@ namespace Core2._2App
             } 
 
             app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
+
 /*            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
             defaultFilesOptions.DefaultFileNames.Clear();
             defaultFilesOptions.DefaultFileNames.Add("foo.html");
@@ -44,7 +46,6 @@ namespace Core2._2App
             fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
             fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html"); 
             app.UseFileServer(fileServerOptions);*/
-            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) =>
             {

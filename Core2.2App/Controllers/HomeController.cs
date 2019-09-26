@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core2._2App.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
-        public string Index()
+        public JsonResult Index()
         {
-            return "Hello from MVC";
+            return Json(new {id = 1, name = "Trace"});
         }
     }
 }

@@ -47,10 +47,10 @@ namespace Core2._2App
             fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html"); 
             app.UseFileServer(fileServerOptions);*/
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!" );
-            });
+//            app.Run(async (context) =>
+//            {
+//                await context.Response.WriteAsync("Hello World!" );
+//            });
         }
     }
 }

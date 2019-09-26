@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core2._2App.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core2._2App.Controllers
 {
     public class HomeController : Controller
     {
-        public JsonResult Index()
+        private IEmployeeRespository _employeeRepository;
+
+        public HomeController(IEmployeeRespository employeeRepository)
         {
-            return Json(new {id = 1, name = "Trace"});
+            _employeeRepository = employeeRepository;
+        }
+        public string Index()
+        {
+            return _employeeRepository.GetEmployee(1).Name;
         }
     }
 }

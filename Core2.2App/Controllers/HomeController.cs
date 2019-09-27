@@ -10,16 +10,18 @@ namespace Core2._2App.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IEmployeeRespository _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public HomeController(IEmployeeRespository employeeRepository)
+        public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model = _employeeRepository.GetAllEmployees();
+            return View(model);
+
         }
             
         public ViewResult Details()

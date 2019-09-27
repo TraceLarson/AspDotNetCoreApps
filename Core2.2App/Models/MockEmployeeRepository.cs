@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Core2._2App.Models
 {
-    public class MockEmployeeRepository : IEmployeeRespository
+    public class MockEmployeeRepository : IEmployeeRepository
     {
         private List<Employee> _employeeList;
+
 
         public MockEmployeeRepository()
         {
@@ -19,9 +20,16 @@ namespace Core2._2App.Models
 
             };  
         }
+        public IEnumerable<Employee> GetAllEmployees()
+        {
+            return _employeeList;
+        }
+
         public Employee GetEmployee(int Id)
         {
             return _employeeList.FirstOrDefault(e => e.Id == Id); 
         }
+
+        
     }
 }

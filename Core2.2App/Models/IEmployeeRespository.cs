@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace Core2._2App.Models
 {
-   public interface IEmployeeRespository
+   public interface IEmployeeRepository
     {
         Employee GetEmployee(int Id);
+        IEnumerable<Employee> GetAllEmployees();
     }
 }

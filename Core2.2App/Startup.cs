@@ -38,8 +38,8 @@ namespace Core2._2App
 
             app.UseStaticFiles();
 //            app.UseMvcWithDefaultRoute();
-//            app.UseMvc(routes => { routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
-            app.UseMvc();
+            app.UseMvc(routes => { routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
+//            app.UseMvc();
         }
     }
 }

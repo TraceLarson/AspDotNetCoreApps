@@ -34,5 +34,10 @@ namespace Core2._2App.Controllers
 
             return View(homeDetailsViewModel);
         }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
     }
 }

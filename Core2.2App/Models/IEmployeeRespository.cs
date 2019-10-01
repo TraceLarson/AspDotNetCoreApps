@@ -9,5 +9,6 @@ namespace Core2._2App.Models
     {
         Employee GetEmployee(int Id);
         IEnumerable<Employee> GetAllEmployees();
+        Employee Add(Employee employee);
     }
 }

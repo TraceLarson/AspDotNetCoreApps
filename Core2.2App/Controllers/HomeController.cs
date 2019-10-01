@@ -47,5 +47,31 @@ namespace Core2._2App.Controllers
             Employee newEmployee = _employeeRepository.Add(employee);
             return RedirectToAction("Details", new {id = newEmployee.Id});
         }
+
+        public RedirectToActionResult Delete(int id)
+        {
+            Employee selectedEmployee = _employeeRepository.GetEmployee(id);
+            _employeeRepository.Delete(selectedEmployee);
+            return RedirectToAction("Index");
+        }
+
+//        [HttpGet]
+//        public ViewResult Edit(int id)
+//        {
+//            HomeEditViewModel homeEditViewModel = new HomeEditViewModel()
+//            {
+//                Employee = _employeeRepository.GetEmployee(id),
+//                PageTitle = "Edit Details"
+//            };
+//
+//            return View(homeEditViewModel);
+//        }
+
+//        [HttpPut]
+//        public RedirectToActionResult Edit(Employee employee)
+//        {
+//            Employee editedEmployee = _employeeRepository.Update(employee);
+//            return RedirectToAction("Details", new {id = editedEmployee.Id});
+//        }
     }
 }

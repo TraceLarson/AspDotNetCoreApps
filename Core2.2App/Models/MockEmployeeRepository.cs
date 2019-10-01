@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,6 +21,21 @@ namespace Core2._2App.Models
 
             };  
         }
+
+        public Employee Add(Employee employee)
+        {
+           employee.Id = _employeeList.Max(e => e.Id) + 1;
+            _employeeList.Add(employee);
+            return employee;
+        }
+
+        public IEnumerable<Employee> Delete(Employee employee)
+        {
+//            int selectedEmployeeIndex = _employeeList.FindIndex(e => e.Id == id);
+                _employeeList.Remove(employee);
+                return _employeeList;
+        }
+
         public IEnumerable<Employee> GetAllEmployees()
         {
             return _employeeList;
@@ -30,13 +46,5 @@ namespace Core2._2App.Models
             return _employeeList.FirstOrDefault(e => e.Id == Id); 
         }
 
-        public Employee Add(Employee employee)
-        {
-           employee.Id = _employeeList.Max(e => e.Id) + 1;
-            _employeeList.Add(employee);
-            return employee;
-        }
-
-        
     }
 }

@@ -29,11 +29,34 @@ namespace Core2._2App.Models
             return employee;
         }
 
-        public IEnumerable<Employee> Delete(Employee employee)
+        public Employee Update(Employee employeeChanges)
         {
-//            int selectedEmployeeIndex = _employeeList.FindIndex(e => e.Id == id);
+            Employee employee = _employeeList.FirstOrDefault(e => e.Id == employeeChanges.Id);
+            if (employee != null)
+            {
+                employee.Name = employeeChanges.Name;
+                employee.Email = employeeChanges.Email;
+                employee.Department = employeeChanges.Department;
+            }
+
+            return employee;
+        }
+
+//        public IEnumerable<Employee> Delete(Employee employee)
+//        {
+////            int selectedEmployeeIndex = _employeeList.FindIndex(e => e.Id == id);
+//                _employeeList.Remove(employee);
+//                return _employeeList;
+//        }
+
+        public Employee Delete(int id)
+        {
+            Employee employee = _employeeList.FirstOrDefault(e => e.Id == id);
+            if (employee != null)
+            {
                 _employeeList.Remove(employee);
-                return _employeeList;
+            }
+            return employee;
         }
 
         public IEnumerable<Employee> GetAllEmployees()

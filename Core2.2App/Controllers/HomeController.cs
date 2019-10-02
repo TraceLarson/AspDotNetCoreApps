@@ -53,12 +53,12 @@ namespace Core2._2App.Controllers
             return View();
         }
 
-        public RedirectToActionResult Delete(int id)
-        {
-            Employee selectedEmployee = _employeeRepository.GetEmployee(id);
-            _employeeRepository.Delete(selectedEmployee);
-            return RedirectToAction("Index");
-        }
+//        public RedirectToActionResult Delete(int id)
+//        {
+//            Employee selectedEmployee = _employeeRepository.GetEmployee(id);
+//            _employeeRepository.Delete(selectedEmployee);
+//            return RedirectToAction("Index");
+//        }
 
 //        [HttpGet]
 //        public ViewResult Edit(int id)

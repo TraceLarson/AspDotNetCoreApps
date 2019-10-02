@@ -10,6 +10,7 @@ namespace Core2._2App.Models
         Employee GetEmployee(int Id);
         IEnumerable<Employee> GetAllEmployees();
         Employee Add(Employee employee);
-        IEnumerable<Employee> Delete(Employee employee);
+        Employee Update(Employee employeeChanges);
+        Employee Delete(int Id);
     }
 }

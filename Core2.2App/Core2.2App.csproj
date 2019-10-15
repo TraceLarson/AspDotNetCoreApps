@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191004215159_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20191004215159_AddPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20191004215953_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20191004215953_AddPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20191004220144_AddSomeProperty.cs" />
+    <Compile Remove="Migrations\20191004220144_AddSomeProperty.Designer.cs" />
+    <Compile Remove="Migrations\20191007143825_FixPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20191007143825_FixPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20191007144033_AddSomePropertyAgain.cs" />
+    <Compile Remove="Migrations\20191007144033_AddSomePropertyAgain.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>

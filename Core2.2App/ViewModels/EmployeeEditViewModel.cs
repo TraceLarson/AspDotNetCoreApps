@@ -6,9 +6,10 @@ using Core2._2App.Models;
 
 namespace Core2._2App.ViewModels
 {
-    public class HomeEditViewModel
+    public class EmployeeEditViewModel : EmployeeCreateViewModel
     {
-        public Employee Employee { get; set; }
-        public string PageTitle { get; set; }
+        public int Id { get; set; }
+        public string ExistingPhotoPath { get; set; }
+
     }
 }

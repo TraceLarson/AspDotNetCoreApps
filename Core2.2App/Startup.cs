@@ -39,6 +39,12 @@ namespace Core2._2App
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
             } 
 
             app.UseStaticFiles();
